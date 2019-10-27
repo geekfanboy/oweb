@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
+  contact = { name: '', email:'', subject: '', message: ''};
+
   constructor() { }
 
   ngOnInit() {

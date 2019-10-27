@@ -1,0 +1,24 @@
+@import '../styles/variables';
+
+#main-nav {
+    height: 60px;
+
+    #logo {
+        height: 60px;
+        padding: 17px 0;
+    }
+
+    a {
+        color: $ow-white;
+        font-size: 0.8rem;
+        letter-spacing: 2px;
+        &.active{
+            font-weight: 700;
+            color: $ow-yellow;
+        }
+        &:hover {
+            text-decoration: none;
+            color: $ow-yellow;
+        }
+    }
+}

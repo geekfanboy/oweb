@@ -1,1 +1,155 @@
 /* You can add global styles to this file, and also import other style files */
+@import './styles/bootstrap.css';
+@import './styles/variables';
+@import url('https://fonts.googleapis.com/css?family=Montserrat:500,700,800i&display=swap');
+
+* {
+    font-family: 'Montserrat', sans-serif;
+}
+
+h1 {
+    font-weight: 800;
+    font-style: italic;
+}
+
+h2 {
+    font-weight: 800;
+}
+
+h3 {
+    font-weight: 800;
+    font-size: 1.1rem;
+}
+
+h4{
+    font-weight: 800;
+    font-size: 1.1rem;
+    letter-spacing: 2px;
+}
+
+p {
+    font-weight: 500;
+}
+
+section {
+    padding: 70px 0;
+}
+
+.bg-yellow {
+    background-color: $ow-yellow;
+}
+
+.bg-black {
+    background-color: $ow-black;
+}
+
+.bg-white {
+    background-color: $ow-white;
+}
+
+.bg-darkgrey{
+    background-color: $ow-darkgrey;
+}
+
+.under-yellow {
+    text-decoration: underline;
+    text-decoration-color: $ow-yellow;
+}
+
+.has-header {
+    margin-top: 50px;
+}
+
+.ow-button {
+    border: none;
+    font-weight: 800;
+    letter-spacing: 2px;
+    padding: 15px 40px;
+    font-size: 0.75rem;
+    font-family: 'Montserrat', sans-serif;
+    border-radius: 3px;
+}
+
+.button-yellow {
+    background-color: $ow-yellow;
+}
+
+// text colors
+.text-black {
+    color: $ow-black;
+}
+
+.text-yellow{
+    color: $ow-yellow;
+}
+
+.text-white{
+    color: $ow-white;
+}
+
+.text-darkgrey{
+    color: $ow-darkgrey;
+}
+
+//text alignments
+.text-center {
+    text-align: center;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.text-left {
+    text-align: left;
+}
+
+// padding util
+
+.pad-around-sm {
+    padding: 20px;
+}
+
+.pad-around-lg {
+    padding: 50px;
+}
+
+.border-round {
+    border-radius: 3px;
+}
+
+.card {
+    box-shadow: 3px 3px 5px 0px #CCC;
+    border-radius: 3px;
+    border: none;
+}
+
+.ow-line {
+    height: 4px;
+    width: 30%;
+
+    &.center {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    &.right {
+        margin-right: 0;
+        margin-left: auto;
+    }
+
+    &.left {
+        margin-right: auto;
+        margin-left: left;
+    }
+}
+
+
+.plain-list{
+    list-style: none;
+    padding: 0;
+}
+
+.text-small{
+    font-size: 0.75rem;
+}
