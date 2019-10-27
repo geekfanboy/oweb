@@ -1,0 +1,9 @@
+<p>posts works!</p>
+<div *ngIf='this.posts$'>
+    <div class='article' *ngFor="let post of posts$; let i=index">
+        <div class='text-left'>
+            <h5><strong>{{post.title.rendered}}</strong></h5>
+        </div>
+        <button class='readmore' routerLink='../post/{{post.id}}'>READ MORE</button>
+    </div>
+</div>
