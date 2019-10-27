@@ -2,11 +2,8 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'ow-root',
-  template: `
-
-    <router-outlet></router-outlet>
-  `,
-  styles: []
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
   title = 'oweb';

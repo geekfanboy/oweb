@@ -9,12 +9,18 @@ import { HttpClientModule } from '@angular/common/http';
 import { NgtUniversalModule } from '@ng-toolkit/universal';
 import { PostsComponent } from './pages/posts/posts.component';
 import { PostComponent } from './pages/post/post.component';
+import { HomeComponent } from './pages/home/home.component';
+import { AboutComponent } from './pages/about/about.component';
+import { ServicesComponent } from './pages/services/services.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     PostsComponent,
-    PostComponent
+    PostComponent,
+    HomeComponent,
+    AboutComponent,
+    ServicesComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
