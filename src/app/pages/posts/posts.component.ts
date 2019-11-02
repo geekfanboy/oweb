@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { WpserviceService } from '../../services/wpservice.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'ow-posts',
@@ -15,29 +16,28 @@ export class PostsComponent implements OnInit {
   numpages = 0;
 
 
-  constructor(private wp: WpserviceService) { }
+  constructor(private wp: WpserviceService, private route: ActivatedRoute) { }
 
   ngOnInit() {
 
+    this.route.params.subscribe(params => {
+      this.current = params.page;
+      console.log('test');
+      this.wp.getPostsPage(this.current, this.maxpage).subscribe(ret => {
+        this.posts$ = ret.body;
+        console.log(ret);
 
-     this.current =1;
-
-     this.wp.getPostsPage(this.current, 3).subscribe(ret =>{
-      this.posts$ = ret.body;
-      console.log(ret);
-
-    //  this.headers = ret['headers'].keys().map(key =>
-    //{key: ret.headers.get(key)});
-      this.numpages = +(ret.headers.get('X-WP-TotalPages'));
-      console.log(this.numpages);
-      this.pages = Array(this.numpages).fill(0).map((x,i)=>i+1);
-     // console.log(this.pages);
+        this.numpages = +(ret.headers.get('X-WP-TotalPages'));
+        console.log(this.numpages);
+        this.pages = Array(this.numpages).fill(0).map((x, i) => i + 1);
+      });
     });
-
-
-   // this.posts$ = this.wp.getPostsPage(3, 3);
-    //console.log(this.posts$);
-
   }
+
+  setwindow(win) {
+    this.pagewindow = win;
+    console.log(this.pagewindow)
+  }
+
 
 }

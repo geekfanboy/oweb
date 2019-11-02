@@ -32,7 +32,7 @@ p {
 }
 
 section {
-    padding: 70px 0;
+    padding: 60px 0;
 }
 
 .bg-yellow {
@@ -152,4 +152,27 @@ section {
 
 .text-small{
     font-size: 0.75rem;
+}
+
+
+#article-content{
+    p:first-of-type{
+        font-size: 1.3rem;
+        font-weight: 600;
+    }
+    p{
+        line-height: 1.75rem;
+    }
+    img, figure{
+        max-width: 100%;
+        height: auto;
+        margin:auto;
+        margin-top: 20px;
+    }
+    figcaption{
+        margin-top: 10px;
+        margin-bottom: 30px;;
+        font-size: 0.9rem;
+        font-weight: 900;
+    }
 }

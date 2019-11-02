@@ -15,6 +15,8 @@ import { HomeComponent } from './pages/home/home.component';
 import { AboutComponent } from './pages/about/about.component';
 import { ServicesComponent } from './pages/services/services.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { SliderComponent } from './components/slider/slider.component';
+import { SafeHTMLPipe } from './pipes/safe-html.pipe';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,9 @@ import { FooterComponent } from './components/footer/footer.component';
     HomeComponent,
     AboutComponent,
     ServicesComponent,
-    FooterComponent
+    FooterComponent,
+    SliderComponent,
+    SafeHTMLPipe
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),

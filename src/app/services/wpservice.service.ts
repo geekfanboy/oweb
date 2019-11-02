@@ -11,6 +11,7 @@ export class WpserviceService {
   constructor(private http: HttpClient) { }
 
   getPostsPage(pagenum, perpage): any {
+    console.log('test2');
     return this.http.get<any[]>(this.url + '/wp-json/wp/v2/posts?_embed', {
       params: {
         per_page: perpage,

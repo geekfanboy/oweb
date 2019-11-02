@@ -1,0 +1,56 @@
+@import '../../../styles/variables.scss';
+#head-hero {
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: bottom;
+
+    position: absolute;
+    width: 100%;
+    height:100%;
+    top: 0;
+    left: 0;
+    filter: grayscale(0.1) brightness(0.3);
+    -webkit-filter: grayscale(0.1)  brightness(0.3);
+
+}
+
+#head {
+    overflow: hidden;
+    position: relative;
+    width:100%;
+    padding: 25% 0;
+}
+
+#title-box{
+    position: relative;
+}
+
+#title{
+    font-style: normal;
+    margin-top: 15px;
+}
+
+.datum{
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    color: rgba(255,255,255,0.6);
+    strong{
+        color: white;
+    }
+    // opacity: 0.9;
+
+}
+
+#cat{
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    font-weight: 900;
+    color: $ow-yellow;
+    padding:5px 10px;
+    border: 2px solid $ow-yellow;
+    &:hover{
+        background-color: $ow-yellow;
+        color: white;
+    }
+    margin-right: 10px;
+}

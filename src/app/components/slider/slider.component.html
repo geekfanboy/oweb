@@ -1,0 +1,45 @@
+<div style='position:relative; height:100%'>
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide" *ngFor='let member of members; index as i'>
+                <div class='row w-100 h-100' id='slide'>
+                    <div class='col-md-4'>
+                        <img id='profile' [src]="'../../../assets/img/team/' + member.img" />
+                    </div>
+                    <div id='descr' class='col-md-8 text-left '>
+                        <div class='py-5'>
+                            <h2 [innerHTML]='member.name'></h2>
+                            <h3 [innerHTML]='member.title'></h3>
+                            <p [innerHTML]='member.desc'></p>
+                            <ul class='plain-list'>
+                                <li *ngIf="member.socials.li">
+                                    <a [href]="'https://www.linkedin.com/in' + member.socials.li">
+                                        <img src='../../../assets/img/icons/li.png' />
+                                        <p [innerHTML]='member.socials.li'></p>
+                                    </a>
+                                </li>
+                                <li *ngIf="member.socials.mail">
+                                    <a [href]="'mailto:' + member.socials.mail">
+                                        <img src='../../../assets/img/icons/mail.png' />
+                                        <p [innerHTML]='member.socials.mail'></p>
+                                    </a>
+                                </li>
+                                <li *ngIf="member.socials.li">
+                                    <a href="tel:{{member.socials.tn}}">
+                                        <img src='../../../assets/img/icons/phone.png' />
+                                        <p [innerHTML]='member.socials.tn'></p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+        <!-- Add Arrows -->
+        <div class="swiper-button-next"> NEXT </div>
+        <div class="swiper-button-prev"> PREV </div>
+    </div>
+</div>

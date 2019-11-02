@@ -1,0 +1,61 @@
+{
+
+    "team" : [
+        {
+          "img": "embw.png",
+          "thumb": "embw.png",
+          "name": "Emmanuel Bueta",
+          "title": "Founder & CEO",
+          "desc": "Electronics & Communications Engineering <br> CEO Gloop <br> Dev Lead Hewlett Packard AP, NGA",
+          "socials": {
+            "li":"/bueta",
+            "mail": "em@onewatt.eu",
+            "tn":"+31 (0)6 192 11835"
+          }
+        },
+        {
+          "img": "paobw.png",
+          "name": "Paolo Samontanez",
+          "title": "Founder & CTO",
+          "desc": "Electronics & Communications Engineering <br> Applied Mesh <br>CTO Qwikwire",
+          "socials": {
+            "mail": "pao@onewatt.eu",
+            "tn":"+31 (0)6 192 11835"
+          }
+        },
+        {
+          "img": "ronbw.png",
+          "name": "Ronald Yu",
+          "title": "CSO",
+          "desc": "Industrial Engineering <br> M.A. Economics <br>Post Grad Cert King's College",
+          "socials": {
+            "mail": "hi@onewatt.eu",
+            "tn":""
+          }
+        },
+
+        {
+          "img": "kylebw.png",
+          "name": "Kyle Pelaez",
+          "title": "Engineering Consultant",
+          "desc": "Mechanical Engineering <br> Tech Enthusiast",
+          "socials": {
+            "li":"https://www.linkedin.com/in/kylepelaez/",
+            "mail": "kyle@onewatt.eu",
+            "tn":""
+          }
+        },
+        {
+          "img": "carlosbw.png",
+          "name": "Carlos Daroya",
+          "title": "Software Engineer",
+          "desc": "Computer Science",
+          "socials": {
+            "li":"/",
+            "mail": "carlos@onewatt.eu",
+            "tn":""
+          }
+        }
+      ]
+
+}

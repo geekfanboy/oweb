@@ -13,7 +13,7 @@ const routes: Routes = [
     component: HomeComponent
   },
   {
-    path: 'posts',
+    path: 'posts/:page',
     component: PostsComponent
   },
   {

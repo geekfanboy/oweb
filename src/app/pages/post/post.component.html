@@ -1,39 +1,40 @@
-<div *ngIf='post !== undefined'>
-        <div id='head-hero'
-            [ngStyle]="{ 'background-image': 'url(' + post['_embedded']['wp:featuredmedia'][0].source_url + ')'}">
+<section>
+    <div *ngIf='post !== undefined'>
+        <div id='head'>
+            <div id='head-hero'
+                [ngStyle]="{ 'background-image': 'url(' + post['_embedded']['wp:featuredmedia'][0].source_url + ')'}">
+            </div>
+            <div id='title-box'>
+                <div class='container'>
+                    <div>
+                        <ng-container *ngFor='let cat of post._embedded["wp:term"][0]'>
+                            <span [ngClass]="cat.slug" id='cat'>
+                                {{post._embedded['wp:term'][0][0].name}}
+                            </span>
+                        </ng-container>
+                    </div>
+                    <h1 id='title' class='text-white' [innerHTML]='post.title.rendered'></h1>
 
+                    <span class='datum'> BY <strong> {{post['_embedded']['author'][0]['name']}} </strong>
+                        ON {{post.date_gmt | date: "dd MMMM yy"}}</span>
 
-
-        </div>
-        <div class='container'>
-            <div [ngClass]="post._embedded['wp:term'][0][0].slug" id='cat'>
-                {{post._embedded['wp:term'][0][0].name}}
+                </div>
             </div>
         </div>
-        <div class='full-width' id='content'>
-            <div class='container'>
 
-                <h1 [innerHTML]='post.title.rendered'></h1>
+        <div class='full-width' id='article-content'>
+            <div class='container mt-5'>
 
-                <div class='author row'>
-
-                    <div class='col-sm-6 text-left'><img id='avat' [src]="post['_embedded']['author'][0]['avatar_urls']['24']" />
-                    <span> {{post['_embedded']['author'][0]['name']}}
-                    </span> · <span class='datum'>{{post.date_gmt | date: "dd MMMM yy"}}
-                    </span></div>
-                    <div class='col-sm-6'>
-
-                    </div>
-                </div>
-
-                <div id='main-content' [innerHTML]='post.content.rendered'></div>
+                <div id='main-content' [innerHTML]='post.content.rendered | safeHTML'></div>
                 <div id='bottom'>
                     <button id='backer'>
                         <span>BACK TO LIST</span>
                     </button>
                     <div>
-                </div>
+                    </div>
 
+                </div>
             </div>
         </div>
     </div>
+</section>

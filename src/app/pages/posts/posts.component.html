@@ -1,9 +1,45 @@
-<p>POSTS!!!</p>
-<div *ngIf='this.posts$'>
-    <div class='article' *ngFor="let post of posts$; let i=index">
-        <div class='text-left'>
-            <h5><strong>{{post.title.rendered}}</strong></h5>
+<section class='had-header'>
+
+    <div *ngIf='this.posts$' class='container'>
+        <div  id='pagination' *ngIf='pages'>
+            <ng-container *ngIf='pagewindow > 1'><button id='prev' (click)='setwindow(pagewindow-1)'>
+                    BACK
+                </button>
+            </ng-container>
+            <ng-container *ngFor="let i of pages.slice(maxpage*(pagewindow-1),maxpage*(pagewindow-1)+maxpage)"><a
+                    [routerLink]='"/posts/"+i'>
+                    <div class='page' [ngClass]='current == i ? "active" : "inactive"'>{{i}}</div>
+                </a>
+            </ng-container>
+            <ng-container *ngIf='pagewindow*maxpage < pages.length'><button id='next' (click)='setwindow(pagewindow+1)'>
+                    NEXT
+                </button>
+            </ng-container>
         </div>
-        <button class='readmore' routerLink='../post/{{post.id}}'>READ MORE</button>
+        <div class='article' *ngFor="let post of posts$; let i=index">
+
+            <div routerLink='/post/{{post.id}}' class='thumb'
+                [ngStyle]="{ 'background-image': 'url(' + post['_embedded']['wp:featuredmedia'][0].source_url + ')'}">
+
+            </div>
+            <div  id='details' class='text-left'>
+
+                <span class='datum'> BY <strong> {{post['_embedded']['author'][0]['name']}} </strong>
+                    ON {{post.date_gmt | date: "dd MMMM yy"}}</span>
+                <h2 routerLink='/post/{{post.id}}'>{{post.title.rendered}}</h2>
+
+
+                <div class='ow-line bg-yellow'></div>
+                <div routerLink='/post/{{post.id}}' class='excerpt text-left mb-4' [innerHTML]='post.excerpt.rendered'></div>
+                <ng-container *ngFor='let cat of post._embedded["wp:term"][0]'>
+                    <span [ngClass]="cat.slug" id='cat'>
+                        {{post._embedded['wp:term'][0][0].name}}
+                    </span>
+                </ng-container>
+
+            </div>
+
+        </div>
     </div>
-</div>
+
+</section>
